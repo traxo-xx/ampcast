@@ -2,7 +2,7 @@ const {resolve} = require('path');
 const express = require('express');
 const dotenv = require('dotenv').config();
 
-const host = 'localhost';
+const host = dotenv.parsed.DEV_HOST ||'localhost';
 const port = dotenv.parsed.DEV_PORT || 8000;
 const app = express();
 const wwwDir = resolve(__dirname, './app/www');
